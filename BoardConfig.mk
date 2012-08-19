@@ -34,7 +34,6 @@ BOARD_USE_NASTY_PTHREAD_CREATE_HACK := true
 TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 
 BOARD_EGL_CFG := device/lge/pecan/configs/egl.cfg
-BOARD_CUSTOM_USB_CONTROLLER := ../../device/lge/p350/netd/UsbController.cpp
 TARGET_SPECIFIC_HEADER_PATH := device/lge/p350/include
 
 TARGET_PROVIDES_INIT_TARGET_RC := true
