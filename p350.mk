@@ -3,7 +3,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-$(call inherit-product-if-exists, vendor/lge/p500/p500-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/p350/p350-vendor.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
@@ -27,7 +27,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.pecan.rc:root/init.pecan.rc \
     $(LOCAL_PATH)/ueventd.pecan.rc:root/ueventd.pecan.rc \
-    $(LOCAL_PATH)/init.lge.hidden_reset.sh:root/init.lge.hidden_reset.sh \
     #$(LOCAL_PATH)/init.pecan.rc:root/init.pecan.rc \
 
 #Configs
