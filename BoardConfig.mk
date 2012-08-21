@@ -33,7 +33,7 @@ BOARD_NO_RGBX_8888 := true
 BOARD_USE_NASTY_PTHREAD_CREATE_HACK := true
 TARGET_USES_16BPPSURFACE_FOR_OPAQUE := true
 
-BOARD_EGL_CFG := device/lge/pecan/configs/egl.cfg
+BOARD_EGL_CFG := device/lge/p350/configs/egl.cfg
 TARGET_SPECIFIC_HEADER_PATH := device/lge/p350/include
 
 TARGET_PROVIDES_INIT_TARGET_RC := true
@@ -41,11 +41,6 @@ TARGET_PROVIDES_INIT_TARGET_RC := true
 TARGET_USES_OLD_LIBSENSORS_HAL:=true
 
 TARGET_OTA_ASSERT_DEVICE := pecan,p350
-
-#recovery
-BOARD_LDPI_RECOVERY := true
-BOARD_HAS_JANKY_BACKBUFFER := true
-BOARD_CUSTOM_GRAPHICS           := ../../../device/lge/p350/recovery/graphics.c
 
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
