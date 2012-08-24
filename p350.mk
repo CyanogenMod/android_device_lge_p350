@@ -19,10 +19,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-# Publish that we support the live wallpaper feature.
-PRODUCT_COPY_FILES += \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml \
-
 # Board-specific init
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.pecan.rc:root/init.pecan.rc \
@@ -85,6 +81,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
 
 
@@ -93,13 +90,11 @@ PRODUCT_PACKAGES += \
     libaudio \
     libcamera \
     lights.p350 \
+    copybit.msm7k \
     libmm-omxcore \
     libOmxCore \
     libOmxVidEnc \
     com.android.future.usb.accessory \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    FM \
     gps.p350 \
     gralloc.pecan \
     bash \
