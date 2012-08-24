@@ -105,6 +105,7 @@ PRODUCT_PACKAGES += \
     bash \
     dexpreopt \
     hwaddrs \
+    copybit.p350 \
 
 PRODUCT_LOCALES += ldpi
 
