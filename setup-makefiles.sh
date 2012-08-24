@@ -92,7 +92,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblgeat.so:system/lib/liblgeat.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcm.so:system/lib/libcm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libqueue.so:system/lib/libqueue.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblgerft.so:system/lib/liblgerft.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libdss.so:system/lib/libdss.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libbcmwl.so:system/lib/libbcmwl.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libwmsts.so:system/lib/libwmsts.so \\
@@ -101,9 +100,8 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblgdrm.so:system/lib/liblgdrm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libril.so:obj/lib/libril.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libril.so:system/lib/libril.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bin/qmuxd:system/bin/qmuxd \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/flex/flex.xml:system/etc/flex/flex.xml \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bin/atd:system/bin/atd
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/rild:system/bin/rild \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/qmuxd:system/bin/qmuxd
 
 ## Audio
 
@@ -112,8 +110,8 @@ PRODUCT_COPY_FILES += \\
 
 ## HAL
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.muscat.so:system/lib/hw/sensors.muscat.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.pecan.so:system/lib/hw/sensors.pecan.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.pecan.so:system/lib/hw/gralloc.pecan.so
 
 ## EGL
 PRODUCT_COPY_FILES += \\
@@ -150,8 +148,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libdivxdrmdecrypt.so:system/lib/libdivxdrmdecrypt.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so 
 
 ## Camera
 PRODUCT_COPY_FILES += \\
@@ -163,12 +160,14 @@ PRODUCT_COPY_FILES += \\
 
 ## BT
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/BCM43291A0_003.001.013.0141.0153.hcd:system/etc/firmware/BCM43291A0_003.001.013.0141.0153.hcd
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/BCM43291A0_003.001.013.0060.Pecan.hcd:system/bin/BCM43291A0_003.001.013.0060.Pecan.hcd
 
 ## WiFi
 PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/nvram.txt:system/etc/wl/nvram.txt \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc.bin:system/etc/wl/rtecdc.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc-apsta.bin:system/etc/wl/rtecdc-apsta.bin
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc-apsta.bin:system/etc/wl/rtecdc-apsta.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc-mfgtest.bin:system/etc/wl/rtecdc-mfgtest.bin
 EOF
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/BoardConfigVendor.mk

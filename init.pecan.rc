@@ -81,10 +81,6 @@ service hciattach /system/bin/sh /system/bin/init.qcom.bt.sh
 # create logging directory
 	mkdir /data/logger 0771 system system
 # LGE_CHANGE_E suntae.joo@lge.com 2010-07-14
-## Hidden reset for the kernel interface
-   chmod 0666 /sys/module/lge_handle_panic/parameters/hidden_reset_enable
-on property:ro.build.type=user
-	write /sys/module/lge_handle_panic/parameters/hidden_reset_enable 1
 
 on property:init.svc.hcid=running
 	write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
@@ -106,26 +102,9 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wi
     disabled
     oneshot
 
-service gadget_id /system/bin/gadget_id
-    user root
-    disabled
-    oneshot
-
 service cnd /system/bin/cnd
     socket cnd stream 660 root radio
     socket cne stream 660 root radio
-
-on property:persist.service.adb.enable=1
-    start gadget_id
-
-on property:persist.service.adb.enable=0
-    start gadget_id
-
-on property:net.usb_tethering=1
-    start gadget_id
-
-on property:net.usb_tethering=0
-    start gadget_id
 
 on property:dev.bootcomplete=1
     exec /system/bin/hwaddrs
