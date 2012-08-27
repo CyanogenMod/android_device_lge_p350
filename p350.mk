@@ -92,7 +92,8 @@ PRODUCT_PACKAGES += \
     gps.p350 \
     hwaddrs \
 
-PRODUCT_LOCALES += ldpi
+# Add LDPI assets, in addition to MDPI
+PRODUCT_LOCALES += ldpi mdpi
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := p350
