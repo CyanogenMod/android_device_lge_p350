@@ -87,10 +87,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libaudio \
     libcamera \
-    copybit.msm7k \
+    copybit.p350 \
     libOmxCore \
     gps.p350 \
-    hwaddrs \
+    hwaddrs 
 
 PRODUCT_LOCALES += ldpi mdpi
 
