@@ -90,7 +90,8 @@ PRODUCT_PACKAGES += \
     copybit.msm7k \
     libOmxCore \
     gps.p350 \
-    hwaddrs \
+    gralloc.p350 \
+    hwaddrs 
 
 PRODUCT_LOCALES += ldpi
 
