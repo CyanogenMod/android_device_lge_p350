@@ -110,8 +110,7 @@ PRODUCT_COPY_FILES += \\
 
 ## HAL
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.pecan.so:system/lib/hw/sensors.pecan.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.pecan.so:system/lib/hw/gralloc.pecan.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.pecan.so:system/lib/hw/sensors.pecan.so
 
 ## EGL
 PRODUCT_COPY_FILES += \\
