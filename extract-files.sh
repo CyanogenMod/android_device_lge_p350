@@ -102,8 +102,6 @@ adb pull /system/lib/liblgdrmwbxml.so ../../../vendor/$VENDOR/$DEVICE/proprietar
 adb pull /system/lib/liblgerft.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/liblgerft.so
 adb pull /system/lib/libbcmwl.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libbcmwl.so
 adb pull /system/lib/libdss.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libdss.so
-adb pull /system/bin/rild ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/rild
-adb pull /system/lib/libril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libril.so
 adb pull /system/lib/libloc-rpc.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libloc-rpc.so
 adb pull /system/lib/libloc.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libloc.so
 adb pull /system/lib/libcommondefs.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/libcommondefs.so
