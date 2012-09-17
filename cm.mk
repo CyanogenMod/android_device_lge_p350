@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := p350
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/lge/p350/p530.mk)
+$(call inherit-product, device/lge/p350/p350.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := p350
