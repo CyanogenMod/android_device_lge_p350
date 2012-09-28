@@ -90,6 +90,7 @@ PRODUCT_PACKAGES += \
     copybit.msm7k \
     gralloc.p350 \
     libOmxCore \
+    lgapversion \
     gps.p350 \
     hwaddrs
 
