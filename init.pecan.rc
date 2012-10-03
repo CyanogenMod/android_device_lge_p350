@@ -116,5 +116,5 @@ on property:dev.bootcomplete=1
 on property:gsm.current.phone-type=1
     start setapversion
 
-on property:gsm.version.baseband=
+on property:gsm.version.baseband=V07u-000-000-MAR-23-2009
     start setapversion
