@@ -89,6 +89,7 @@ PRODUCT_PACKAGES += \
     libcamera \
     copybit.msm7k \
     gralloc.p350 \
+    lights.msm7k \
     libOmxCore \
     lgapversion \
     gps.p350 \

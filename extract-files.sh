@@ -27,7 +27,6 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/usr/keychars
 
 # Sensors
 adb pull /system/lib/hw/sensors.pecan.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw/sensors.pecan.so
-adb pull /system/lib/hw/lights.pecan.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/bin/ami304d ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 
 # EGL
