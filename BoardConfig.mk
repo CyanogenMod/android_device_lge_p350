@@ -37,7 +37,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/lge/p350/include
 
 TARGET_PROVIDES_INIT_TARGET_RC := true
 
-TARGET_USES_OLD_LIBSENSORS_HAL:=true
+TARGET_USES_OLD_LIBSENSORS_HAL := true
 
 TARGET_OTA_ASSERT_DEVICE := pecan,p350
 
@@ -47,7 +47,7 @@ BOARD_CUSTOM_GRAPHICS           := ../../../device/lge/p350/recovery/graphics.c
 
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
-BOARD_USES_QCOM_LIBRPC := true
+
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
@@ -55,6 +55,7 @@ TARGET_PROVIDES_LIBAUDIO := true
 TARGET_PROVIDES_LIBRIL := true
 
 BOARD_GPS_LIBRARIES := libgps librpc
+BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := p350
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
@@ -69,8 +70,9 @@ WIFI_DRIVER_FW_AP_PATH          := "/system/etc/wl/rtecdc-apsta.bin"
 WIFI_DRIVER_MODULE_NAME         := "wireless"
 WIFI_DRIVER_MODULE_PATH         := "/system/lib/modules/wireless.ko"
 WIFI_DRIVER_MODULE_ARG          := "firmware_path=/etc/wl/rtecdc.bin nvram_path=/etc/wl/nvram.txt config_path=/data/misc/wifi/config"
-WPA_SUPPLICANT_VERSION          := VER_0_5_X
+WPA_SUPPLICANT_VERSION          := VER_0_6_X
 WIFI_DRIVER_HAS_LGE_SOFTAP      := true
+BOARD_WEXT_NO_COMBO_SCAN       := true
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 
 WITH_JIT := true
