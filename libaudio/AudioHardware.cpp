@@ -926,7 +926,7 @@ static int msm72xx_enable_postproc(bool state)
     }
     if(snd_device == SND_DEVICE_HEADPHONE)
     {
-        device_id = 2;
+        device_id = 3;
         LOGI("set device to SND_DEVICE_HEADPHONE device_id=3");
     }
 
@@ -1146,13 +1146,13 @@ status_t AudioHardware::setMasterVolume(float v)
     Mutex::Autolock lock(mLock);
     int vol = ceil(v * 7.0);
     LOGI("Set master volume to %d.\n", vol);
-    set_volume_rpc(SND_DEVICE_HANDSET, SND_METHOD_VOICE, 1, m7xsnddriverfd);
+    set_volume_rpc(SND_DEVICE_HANDSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_SPEAKER, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_SPEAKER_IN_CALL, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_BT,      SND_METHOD_VOICE, vol, m7xsnddriverfd);
-    set_volume_rpc(SND_DEVICE_HEADSET, SND_METHOD_VOICE, 1, m7xsnddriverfd);
-    set_volume_rpc(SND_DEVICE_HEADSET_STEREO, SND_METHOD_VOICE, 1, m7xsnddriverfd);
-    set_volume_rpc(SND_DEVICE_HEADPHONE, SND_METHOD_VOICE, 1, m7xsnddriverfd);
+    set_volume_rpc(SND_DEVICE_HEADSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
+    set_volume_rpc(SND_DEVICE_HEADSET_STEREO, SND_METHOD_VOICE, vol, m7xsnddriverfd);
+    set_volume_rpc(SND_DEVICE_HEADPHONE, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_IN_S_SADC_OUT_HANDSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_IN_S_SADC_OUT_SPEAKER_PHONE, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     // We return an error code here to let the audioflinger do in-software
