@@ -7,8 +7,7 @@ on boot
 
     mkdir /data/radio 0770 radio radio
 
-## LGE's bluetooth stuff
-# bluetooth permissions
+# bluetooth
     chmod 0660 /dev/ttyHS0
     chown bluetooth bluetooth /dev/ttyHS0
     chown bluetooth bluetooth /proc/bluetooth/sleep/proto
@@ -19,38 +18,10 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     write /sys/class/rfkill/rfkill0/state 0
 
-# +++ BRCM +++
-# Make sure the property critical to Bluetooth functionality to be reserved by creating while booting up.
-    setprop service.brcm.bt.srv_active 0
-	setprop service.brcm.bt.hcid_active 0
-	setprop sys.settings_secure_version 0
-# --- BRCM ---
-### End of LGE bluetooth
-
-## ERS
-    mkdir /data/data/com.lge.ers
-    mkdir /data/data/com.lge.ers/android
-    mkdir /data/data/com.lge.ers/kernel
-    mkdir /data/data/com.lge.ers/arm9
-    chmod 0777 /data/data/com.lge.ers/android
-    chmod 0777 /data/data/com.lge.ers/kernel
-    chmod 0777 /data/data/com.lge.ers/arm9
-
-## VIBRATOR
+# VIBRATOR
     chmod 0666 /sys/class/timed_output/vibrator/amp
-## SENSOR
-	chown system system /dev/ami304
-	chmod 0666 dev/ami304
-	chown system system /dev/ami304daemon
-	chmod 0666 dev/ami304daemon
-	chown system system /dev/ami304hal
-	chmod 0666 dev/ami304hal
-	mkdir /data/amit 0770 ami304d ami304d
-	chown system system /dev/KR3DH
-	chmod 0666 /dev/KR3DH
-	chown system system /dev/KR3DM
-	chmod 0666 /dev/KR3DM	
-## PROXIMITY SENSOR
+
+# PROXIMITY SENSOR
 	chmod 0666 /sys/bus/i2c/drivers/proximity_gp2ap/4-0044/enable
 
 # WIFI
@@ -72,19 +43,6 @@ service hciattach /system/bin/sh /system/bin/init.qcom.bt.sh
     group bluetooth net_bt_admin
     disabled
 
-# Collect ramconsole data
-	copy /proc/last_kmsg /data/dontpanic/last_kmsg
-	chown root log /data/dontpanic/last_kmsg
-	chmod 0640 /data/dontpanic/last_kmsg
-
-# LGE_CHANGE_S suntae.joo@lge.com 2010-07-14
-# create logging directory
-	mkdir /data/logger 0771 system system
-# LGE_CHANGE_E suntae.joo@lge.com 2010-07-14
-
-on property:init.svc.hcid=running
-	write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
-
 service dhcpcd_wlan0 /system/bin/dhcpcd -BKA wlan0
     disabled
     oneshot
@@ -105,10 +63,6 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wi
     group system wifi inet
     disabled
     oneshot
-
-service cnd /system/bin/cnd
-    socket cnd stream 660 root radio
-    socket cne stream 660 root radio
 
 on property:dev.bootcomplete=1
     exec /system/bin/hwaddrs
