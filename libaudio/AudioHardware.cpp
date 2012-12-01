@@ -874,7 +874,7 @@ static int get_audpp_filter(void)
 
     current_str = read_buf;
 
-    while (1) {
+    while (*current_str != (char)EOF)  {
         int len;
         next_str = strchr(current_str, '\n');
         if (!next_str)
