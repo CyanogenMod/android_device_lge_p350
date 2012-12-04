@@ -21,3 +21,15 @@
 /dev/K3DH		    0640  compass      system
 /dev/KR3DH		    0640  compass      system
 /dev/KR3DM		    0640  compass      system
+
+# audio permissions
+/dev/msm_amrnb              0660   system     audio
+/dev/msm_amrnb_in           0660   system     audio
+/dev/msm_amrwb              0660   system     audio
+/dev/msm_evrc               0660   system     audio
+/dev/msm_pcm_dec            0660   system     audio
+/dev/msm_preproc_ctl        0660   system     audio
+/dev/msm_qcelp              0660   system     audio
+/dev/msm_voicememo          0660   system     audio
+/dev/msm_wma                0660   system     audio
+/dev/msm_wmapro             0660   system     audio
