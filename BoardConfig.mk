@@ -43,7 +43,6 @@ TARGET_OTA_ASSERT_DEVICE := pecan,p350
 
 BOARD_LDPI_RECOVERY := true
 BOARD_HAS_JANKY_BACKBUFFER := true
-BOARD_CUSTOM_GRAPHICS           := ../../../device/lge/p350/recovery/graphics.c
 
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
