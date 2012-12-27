@@ -1,0 +1,38 @@
+#!/system/bin/sh
+#
+# 88checkcache
+# try to fix stock on penguin logo problem
+#
+# Author: Alex.wang
+# Create: 2012-09-27 14:37
+#
+# Update: 2012-11-26 22:24
+#  1. adjust to be as a init.d script.
+
+
+CACHE=/cache/dalvik-cache
+DOWN=/cache/download
+
+check_cache() {
+	if [ ! -e "${CACHE}" ] ; then
+		mkdir -m 0771 "${CACHE}"
+		chown system:system "${CACHE}"
+	fi
+
+	if [ ! -e "${DOWN}" ] ; then
+		mkdir -m 0771 "${DOWN}"
+		chown system:cache "${DOWN}"
+	fi
+}
+
+
+# if all dalvik-cache is located in /data, just quit
+DATAONLY=$(getprop dalvik.vm.dexopt-data-only)
+if [ "${DATAONLY}" -eq 1 ] ; then
+	exit 0
+fi
+
+check_cache
+
+exit 0
+
